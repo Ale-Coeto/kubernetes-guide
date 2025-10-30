@@ -1,0 +1,13 @@
+apiVersion: example.com/v1
+kind: Widget
+metadata:
+  name: my-widget
+spec:
+  size: "large"
+---
+apiVersion: example.com/v1
+kind: Widget
+metadata:
+  name: another-widget
+spec:
+  size: "small"

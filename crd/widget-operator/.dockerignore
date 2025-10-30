@@ -1,0 +1,16 @@
+# Build artifacts
+bin/
+*.log
+
+# Git and development files
+.git/
+.gitignore
+README.md
+LICENSE
+
+# Test files
+**/*_test.go
+
+# Docker files
+Dockerfile*
+.dockerignore

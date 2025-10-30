@@ -1,0 +1,5 @@
+# This creates a namespace called local-cluster
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: local-cluster
