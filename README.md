@@ -6,11 +6,11 @@ This repo contains some guides to do different things with kubernetes and contai
 
 - **[Local cluster](local-cluster/README.md)**: Making a local cluster with kind and deploying simple backend and frontend services.
 
-- **[AKS cluster](aks-cluster/README.md)**: Connecting to an Azure Kubernetes Service cluster and deploying a simple page with a static IP.
+- **[AKS cluster](aks-cluster/README.md)**: Connecting to an Azure Kubernetes Service cluster and deploying a simple html page with a static IP.
 
-- **[Custom Resource Definition](crd/README.md)**: Creating a basic CRD using kubebuilder.
+- **[Custom Resource Definition](crd/README.md)**: Creating custom resource definitions in Kubernetes.
 
-## Useful commands
+## Useful kubectl commands
 
 ### Cluster Management
 ```sh
