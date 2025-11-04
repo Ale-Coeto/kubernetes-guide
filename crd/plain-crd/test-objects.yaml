@@ -1,0 +1,15 @@
+apiVersion: example.com/v1
+kind: TestObject
+metadata:
+  name: backup-task
+spec:
+  task: "Backup user database to cloud storage"
+  successMessage: "Database backup completed successfully!"
+---
+apiVersion: example.com/v1
+kind: TestObject
+metadata:
+  name: email-task
+spec:
+  task: "Send welcome emails to new users"
+  successMessage: "All welcome emails have been sent!"

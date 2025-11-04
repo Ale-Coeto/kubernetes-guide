@@ -1,0 +1,94 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.19.0
+  name: statusalerts.example.example.com
+spec:
+  group: example.example.com
+  names:
+    kind: StatusAlert
+    listKind: StatusAlertList
+    plural: statusalerts
+    singular: statusalert
+  scope: Namespaced
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        description: StatusAlert is the Schema for the statusalerts API
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: spec defines the desired state of StatusAlert
+            properties:
+              enableEvents:
+                description: Alert method toggles
+                type: boolean
+              enableFileLog:
+                type: boolean
+              enableLogging:
+                type: boolean
+              logFilePath:
+                description: Configuration for file logging (only used if EnableFileLog
+                  is true)
+                type: string
+              watchKind:
+                description: Configuration for what to watch
+                type: string
+              watchNamespace:
+                type: string
+            required:
+            - enableEvents
+            - enableFileLog
+            - enableLogging
+            - watchKind
+            - watchNamespace
+            type: object
+          status:
+            description: status defines the observed state of StatusAlert
+            properties:
+              eventsGenerated:
+                description: Count of alerts sent
+                format: int32
+                type: integer
+              fileLogsWritten:
+                format: int32
+                type: integer
+              logsGenerated:
+                format: int32
+                type: integer
+              message:
+                type: string
+              status:
+                description: Current status
+                type: string
+              watchedObjects:
+                description: Track what objects we're currently watching
+                format: int32
+                type: integer
+            type: object
+        required:
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

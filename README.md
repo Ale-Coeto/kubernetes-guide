@@ -4,9 +4,11 @@ This repo contains some guides to do different things with kubernetes and contai
 
 ## Short guides
 
-- **[Local cluster](local-cluster/)**: Making a local cluster with kind and deploying simple backend and frontend services.
+- **[Local cluster](local-cluster/README.md)**: Making a local cluster with kind and deploying simple backend and frontend services.
 
-- **[Custom Resource Definition](crd/)**: Creating a basic CRD using kubebuilder.
+- **[AKS cluster](aks-cluster/README.md)**: Connecting to an Azure Kubernetes Service cluster and deploying a simple page with a static IP.
+
+- **[Custom Resource Definition](crd/README.md)**: Creating a basic CRD using kubebuilder.
 
 ## Useful commands
 
@@ -150,4 +152,3 @@ kind load docker-image <image-name> --name <cluster-name>
 # List clusters
 kind get clusters
 ```
-

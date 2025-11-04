@@ -17,6 +17,9 @@ This guide assumes that the user has installed:
 - [kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
 - [Go](https://golang.org/doc/install) (optional) 
 
+
+## Deploying services in a local cluster
+
 ### 1. Create a cluster
 
 ```sh 
@@ -42,13 +45,13 @@ In this case, the frontend has a simple html page and a dockerfile using nginx. 
 
 With the services ready, it is necessary to pre-build the docker images to later load them in kind.
 
-In `services/backend`
+In `backend/`
 
 ```sh
 docker build -t backend .
 ```
 
-In `services/frontend`
+In `frontend/`
 
 ```sh
 docker build -t frontend .
@@ -77,7 +80,7 @@ On the other hand, the services will act as load balancer to call healthy pods. 
 
 After adding the manifests, it is necessary to apply them:
 
-In `services/k8s`:
+In `k8s/`:
 
 ```sh
 kubectl apply -f . # This applies all the manifests in the current path

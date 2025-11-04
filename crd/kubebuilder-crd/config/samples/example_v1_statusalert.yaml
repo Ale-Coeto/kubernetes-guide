@@ -1,0 +1,20 @@
+apiVersion: example.example.com/v1
+kind: StatusAlert
+metadata:
+  labels:
+    app.kubernetes.io/name: kubebuilder-crd
+    app.kubernetes.io/managed-by: kustomize
+  name: statusalert-sample
+spec:
+  # Monitor TestObjects for status changes
+  watchKind: "TestObject"
+  watchNamespace: "default"
+  
+  # Enable all alerting methods by default
+  enableEvents: true
+  enableLogging: true
+  enableFileLog: true
+  
+  # Custom log file path
+  logFilePath: "/tmp/status-alerts.log"
+  
