@@ -29,11 +29,11 @@ while true; do
                 if [ $RANDOM_RESULT -eq 0 ]; then
                     # Success case
                     kubectl patch testobject "$name" -n "$namespace" --type='merge' --subresource=status -p='{"status":{"state":"Succeeded","message":"Task completed successfully!"}}'
-                    echo "✅ $name succeeded"
+                    echo "$name succeeded"
                 else
                     # Failure case  
                     kubectl patch testobject "$name" -n "$namespace" --type='merge' --subresource=status -p='{"status":{"state":"Failed","message":"Task failed due to unexpected error"}}'
-                    echo "❌ $name failed"
+                    echo "$name failed"
                 fi
             fi
         done
